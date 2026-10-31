@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 107" fill="none">
+  <defs>
+    <linearGradient id="la-grad" x1="0" y1="0" x2="107" y2="107" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0A5DBE" />
+      <stop offset="55%" stop-color="#0B6FD0" />
+      <stop offset="100%" stop-color="#39A3FF" />
+    </linearGradient>
+    <linearGradient id="la-amber" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F5A524" />
+      <stop offset="100%" stop-color="#FFB84D" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="8" width="91" height="91" rx="24" fill="url(#la-grad)" />
+  <path d="M28 32V74H54V63H40V32H28Z" fill="white" />
+  <path d="M65 32L51 74H63L65.5 65H76.5L79 74H91L77 32H65ZM68 55L71 44L74 55H68Z" fill="white" />
+  <circle cx="83" cy="24" r="7" fill="url(#la-amber)" />
+  <text x="116" y="54" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="34" fill="#0B1A33" letter-spacing="-0.02em">LA Sales Academy</text>
+  <text x="118" y="82" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="600" font-size="18" fill="#64748B" letter-spacing="0.04em">LINTASARTA GROWTH &amp; ENABLEMENT</text>
+</svg>
+

@@ -1,0 +1,39 @@
+services:
+  salesacademy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: la-sales-academy
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT:-8080}:80"
+    environment:
+      NODE_ENV: production
+      PORT: "80"
+      SQLITE_DB_PATH: /app/data/salesacademy.db
+      CORS_ORIGINS: "${CORS_ORIGINS:-http://localhost:8080,http://localhost:5173,https://salesacademy.ffs.my.id}"
+      AI_PROVIDER: "${AI_PROVIDER:-deterministic}"
+      AI_BASE_URL: "${AI_BASE_URL:-https://api.openai.com/v1}"
+      AI_API_KEY: "${AI_API_KEY:-}"
+      AI_MODEL: "${AI_MODEL:-gpt-4o-mini}"
+    volumes:
+      - salesacademy_data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:80/api/v1/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 128M
+
+volumes:
+  salesacademy_data:
+    driver: local
+
